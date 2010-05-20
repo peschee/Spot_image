@@ -1,5 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Spot_Image {
+
+class Spot_Image
+{
 
     private $file;
     private $image_type;
@@ -56,7 +58,7 @@ class Spot_Image {
 
         return FALSE;
     }
-    
+
     /**
      * Returns src part of img HTML tag // Usefull with lightboxes and inline stlyes for background images
      *
@@ -90,9 +92,9 @@ class Spot_Image {
         return FALSE;
     }
 
-    
+
     /**
-     * Searches for image in defined folders and returns Kohana_Image 
+     * Searches for image in defined folders and returns Kohana_Image
      *
      * @param string $file
      * @return Kohana_Image

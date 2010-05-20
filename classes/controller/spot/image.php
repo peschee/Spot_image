@@ -1,21 +1,22 @@
-<?php 
+<?php
 defined('SYSPATH') or die('No direct script access.');
+
 class Controller_Spot_Image extends Controller
-{    
-    
-    public function action_index ($params)
+{
+
+    public function action_index($params)
     {
         if ($_GET)
         {
             $path = $params;
             $type = $_GET;
         }
-        else 
+        else
         {
-            list ($type, $path) = explode("/", $params);            
+            list($type, $path) = explode("/", $params);
         }
         foreach (Kohana::config("spot_image.folders") as $folder)
-        {            
+        {
             if (is_file($folder.$path))
             {
                 $file = $folder.$path;
@@ -38,7 +39,7 @@ class Controller_Spot_Image extends Controller
         else
         {
             Spot_Image::factory ($file, $type);
-        }        
+        }
     }
 
 } // End Welcome
