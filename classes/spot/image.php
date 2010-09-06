@@ -209,10 +209,10 @@ class Spot_Image
 	 */
     public static function get_from_cache ($file)
     {
-        if (Spot_Expires::check(Kohana::config("spot_image.browser_cache_expire")) === FALSE)
-        {
-            Spot_Expires::set(Kohana::config("spot_image.browser_cache_expire"));
-        }
+        // if (Spot_Expires::check(Kohana::config("spot_image.browser_cache_expire")) === FALSE)
+        // {
+        //     Spot_Expires::set(Kohana::config("spot_image.browser_cache_expire"));
+        // }
 
         $image = Image::factory($file);
 
@@ -293,7 +293,7 @@ class Spot_Image
         }
 
         // If rotate is specified
-        if ($image_params->rotate)
+        if (isset($image_params->rotate))
         {
             $image->rotate($image_params->rotate);
         }
@@ -324,10 +324,10 @@ class Spot_Image
         $image->save(Kohana::config("spot_image.cache_directory").$cache_filename, $quality);
 
         // If the URL is expired set new expiration and render
-        if (Spot_Expires::check(Kohana::config("spot_image.browser_cache_expire")) === FALSE)
-        {
-            Spot_Expires::set(Kohana::config("spot_image.browser_cache_expire"));
-        }
+        // if (Spot_Expires::check(Kohana::config("spot_image.browser_cache_expire")) === FALSE)
+        // {
+        //     Spot_Expires::set(Kohana::config("spot_image.browser_cache_expire"));
+        // }
 
         /*echo Kohana::debug($image_params);
         echo Kohana::debug($image);

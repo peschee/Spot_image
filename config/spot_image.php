@@ -6,7 +6,7 @@ return array
 'cache' => TRUE,
 
 // Folders to look when searching for files
-'folders' => array ("repos/images/", "../repos/images/", "repos/temp/", "../repos/temp/"),
+'folders' => array ("media/images/", "media/images/cases/"),
 
 // Route prefix (same as in init.php)
 'prefix' => "repos",
@@ -27,7 +27,7 @@ return array
 'cache_maxage' => 30 * (24 * 60 * 60), //30 days
 
 // Cache maximum number of files
-'cache_maxfiles' => 1000, 
+'cache_maxfiles' => 1000,
 
 // Cache maximum folder size
 'cache_maxsize' => 50 * (1000 * pow (2, 10)), //50 MBytes

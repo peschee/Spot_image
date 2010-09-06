@@ -13,8 +13,8 @@ class Controller_Spot_Image extends Controller
         }
         else
         {
-            list($type, $path) = explode("/", $params);
-        }
+            list($type, $path) = explode('/', $params);
+		}
         foreach (Kohana::config("spot_image.folders") as $folder)
         {
             if (is_file($folder.$path))
